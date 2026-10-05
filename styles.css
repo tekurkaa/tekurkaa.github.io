@@ -2,7 +2,7 @@
 @font-face{font-family:Plex;src:url("assets/fonts/ibm-plex-sans-latin.woff2") format("woff2");font-style:normal;font-weight:400 600;font-display:swap}
 :root{--paper:#f4f1e9;--ink:#1d2c36;--text:#273740;--muted:#5b686d;--line:#bec4c2;--accent:#9b4b39;--soft:#eae8e1;--figure:#efeee9;font-family:Plex,Arial,sans-serif;color:var(--text);background:var(--paper);font-synthesis:none}
 *,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;scroll-padding-top:88px}
 body{margin:0;min-width:320px}
 body,button{font-size:16px}
 img{display:block;max-width:100%}
@@ -26,7 +26,7 @@ button,a,summary{touch-action:manipulation}
 .desktop-nav .nav-contact{border-bottom:1px solid var(--ink)}
 .desktop-nav .nav-contact::after{bottom:-1px}
 .mobile-nav{display:none}
-section[id]{scroll-margin-top:96px}
+section[id],article[id],.case-study,[id*="-title"]{scroll-margin-top:96px}
 .hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(320px,.85fr);gap:clamp(35px,5vw,90px);align-items:center;min-height:calc(100dvh - 72px);max-height:900px;padding-block:52px 62px}
 .hero-copy{padding-bottom:12px}
 .eyebrow{margin:0 0 21px;color:var(--accent);font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
