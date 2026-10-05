@@ -1,0 +1,11 @@
+# Agent instructions and local assistant configurations
+.agents/
+
+# Graphify knowledge graph outputs
+graphify-out/
+
+# OS and Editor artifacts
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
