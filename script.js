@@ -38,8 +38,18 @@ if ('IntersectionObserver' in window) {
   sections.forEach((section) => navObserver.observe(section));
 }
 
+const mobileNav = document.querySelector('.mobile-nav');
+
 document.querySelectorAll('.mobile-nav a').forEach((link) => {
   link.addEventListener('click', () => {
-    link.closest('details').open = false;
+    if (mobileNav) mobileNav.open = false;
   });
 });
+
+if (mobileNav) {
+  document.addEventListener('click', (event) => {
+    if (mobileNav.open && !mobileNav.contains(event.target)) {
+      mobileNav.open = false;
+    }
+  });
+}
