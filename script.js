@@ -77,3 +77,47 @@ document.querySelectorAll('dialog.image-modal').forEach((modal) => {
   });
 });
 
+// Smooth anchor scrolling with exact header offset
+document.querySelectorAll('.proof-item, a[href^="#"]').forEach((link) => {
+  link.addEventListener('click', (event) => {
+    const hash = link.getAttribute('href');
+    if (!hash || hash === '#' || !hash.startsWith('#')) return;
+    const target = document.querySelector(hash);
+    if (!target) return;
+
+    event.preventDefault();
+    const isCaseStudy = target.classList.contains('case-study') || target.tagName.toLowerCase() === 'article';
+    const isMobile = window.innerWidth <= 760;
+    const headerHeight = isMobile ? 67 : 73;
+    const offset = isCaseStudy ? (isMobile ? 110 : 154) : headerHeight;
+    const targetY = target.getBoundingClientRect().top + window.scrollY - offset;
+
+    window.scrollTo({
+      top: Math.max(0, targetY),
+      behavior: reducedMotion.matches ? 'auto' : 'smooth'
+    });
+
+    if (history.pushState) {
+      history.pushState(null, '', hash);
+    } else {
+      location.hash = hash;
+    }
+  });
+});
+
+// Align initial hash if page is loaded or refreshed with a case study hash
+if (window.location.hash) {
+  const hashTarget = document.querySelector(window.location.hash);
+  if (hashTarget && (hashTarget.classList.contains('case-study') || hashTarget.tagName.toLowerCase() === 'article')) {
+    setTimeout(() => {
+      const isMobile = window.innerWidth <= 760;
+      const offset = isMobile ? 110 : 154;
+      const targetY = hashTarget.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({
+        top: Math.max(0, targetY),
+        behavior: 'auto'
+      });
+    }, 60);
+  }
+}
+
