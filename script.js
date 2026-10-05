@@ -53,3 +53,27 @@ if (mobileNav) {
     }
   });
 }
+
+// Image modal dialog controls
+document.querySelectorAll('[data-modal-target]').forEach((trigger) => {
+  const targetId = trigger.getAttribute('data-modal-target');
+  const modal = document.getElementById(targetId);
+  if (!modal || typeof modal.showModal !== 'function') return;
+
+  trigger.addEventListener('click', () => {
+    modal.showModal();
+  });
+});
+
+document.querySelectorAll('dialog.image-modal').forEach((modal) => {
+  modal.querySelectorAll('[data-dialog-close]').forEach((btn) => {
+    btn.addEventListener('click', () => modal.close());
+  });
+
+  modal.addEventListener('click', (event) => {
+    if (event.target === modal) {
+      modal.close();
+    }
+  });
+});
+

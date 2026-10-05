@@ -33,6 +33,7 @@ The site is built with a dependency-free, vanilla web stack engineered for fast 
 - **Native SVG Data Visualization**: Renders actual derived filing metrics (Item 1A cosine distance drift) using an accessible SVG chart with accessible markup (`<title>`, `<desc>`) and direct links to public data.
 - **Responsive Mobile Navigation Drawer**: Collapsible `<details>` navigation drawer engineered with 44px minimum touch targets, click-outside dismissal, and seamless mobile layout adaptation.
 - **Accessibility & Motion Restraint**: Meets WCAG 2.1 AA contrast guidelines, provides a visible skip-to-content link, distinct `:focus-visible` states, and honors user preferences via `prefers-reduced-motion`.
+- **Native Accessible Image Lightbox**: Standard HTML5 `<dialog>` overlay enabling high-resolution inspection of complex analytical interfaces with light dismiss, keyboard traps, <kbd>Esc</kbd> dismissal, and backdrop blur.
 - **Zero Build Tooling Overhead**: Pure static assets—no Node build process, no bundler, no framework dependencies, and zero runtime vulnerabilities.
 
 ---
