@@ -65,7 +65,7 @@ h2{margin-bottom:12px;font-size:clamp(44px,4.3vw,65px);line-height:1;letter-spac
 .case-featured{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:40px;padding-block:31px 78px}
 .case-visual{align-self:start;margin:0;position:relative}
 .case-visual-dark{padding:15px;background:#17222c}
-.case-visual img{width:100%;aspect-ratio:16/9;object-fit:cover;object-position:top left}
+.case-visual img{display:block;width:100%;height:auto}
 .case-visual{overflow:hidden}
 .case-visual img{transition:transform .7s cubic-bezier(.2,.7,.2,1)}
 .case-visual:hover img{transform:scale(1.025)}
